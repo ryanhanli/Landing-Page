@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #3a4052;
+}
+
+* {
+    box-sizing: border-box; /* Padding and border are included in element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none; /* Remove underlining of the link */
+    color: var(--primary-color);
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.showcase {
+    position: relative;
+    height: 100vh; /* Take up 100% of the view of our height */
+    display: flex;
+    /* https://codepen.io/enxaneta/full/adLPwv/ */
+    flex-direction: column; /* Align flex boxes from top to bottom */
+    align-items: center; /* Alignment & Spacing along alternate axis (Y-axis) */
+    justify-content: center; /* Alignment & Spacing along primary axis (X-axis) */
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide scroll bars */
+    background: var(--primary-color) url('cover.jpg') no-repeat center center/cover;
+}
+
+.video-container video {
+    min-width: 100%; /* Width the video will stay when we resize the video */
+    min-height: 100%;
+    object-fit: cover; /* Cuts off sides of video to preserve aspect ratio */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Darken the video so the text looks more visible */
+.video-container:before {
+	content: '';
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+}
+
+.content {
+    z-index: 2; /* Bring text to the front */
+}
+
+.btn {
+	display: inline-block; /* Behaves like inline but with block elements traits to respect vertical margins unlike display:inline */
+	padding: 10px 30px; /* Top+Bottom Left+Right */
+	background: var(--primary-color);
+	color: #fff;
+	border-radius: 5px;
+	border: solid #fff 1px;
+	margin-top: 25px;
+	opacity: 0.7;
+}
+
+.btn:hover {
+	transform: scale(0.98); /* Shrink slightly when we hover it */
+}
+
+#about {
+    padding: 40px;
+    text-align: center;
+}
+
+#about p{
+    font-size: 1.2rem; /* 1.2x the normal font-size of paragraphs in HTML */
+    max-width: 600px; /* Limit width */
+    margin: auto; /*After limiting width must specify how margin is divided */
+}
+
+#about h2 {
+    margin: 30px 0;
+    color: var(--primary-color);
+}
+
+.social a{
+    margin: 0 5px;
+}
